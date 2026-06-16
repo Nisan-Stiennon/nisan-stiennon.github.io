@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nisan Stiennon</title>
+<meta name="description" content="Nisan Stiennon — personal homepage. Research interests, contact, and selected work.">
+
+<style>
+  /* ---- tokens ---------------------------------------------------- */
+  :root {
+    --ink:   #1a1a1a;   /* body text            */
+    --muted: #666;      /* captions, secondary  */
+    --rule:  #e3e3e0;   /* hairlines            */
+    --bg:    #fdfdfb;   /* paper                */
+    --link:  #1a5fb4;   /* the one accent       */
+    --measure: 40rem;   /* reading width        */
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e7e7e3; --muted: #9a9a96; --rule: #2a2a2c;
+      --bg: #16161a;  --link: #79b0ff;
+    }
+  }
+
+  /* ---- base ------------------------------------------------------ */
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0 auto;
+    max-width: var(--measure);
+    padding: 3.5rem 1.5rem 5rem;
+    background: var(--bg);
+    color: var(--ink);
+    font: 1.125rem/1.6 Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  }
+  a       { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+  a:hover { text-decoration: none; }
+  p       { margin: 0 0 1rem; }
+
+  /* ---- header ---------------------------------------------------- */
+  header { display: flex; gap: 1.5rem; align-items: flex-start; margin-bottom: 2.5rem; }
+  .portrait {
+    flex: none;
+    width: 132px; height: 177px;
+    object-fit: cover;
+    border: 1px solid var(--rule);   /* keeps a tidy box even before you add photo.jpg */
+    background: #efefec;
+  }
+  h1 { margin: 0 0 .25rem; font-size: 1.7rem; font-weight: 600; line-height: 1.15; }
+  .affil   { margin: 0 0 .6rem; color: var(--muted); }
+  .contact { margin: 0; font-size: .95rem; }
+  .contact a { white-space: nowrap; }
+
+  /* ---- sections -------------------------------------------------- */
+  section { border-top: 1px solid var(--rule); padding-top: 1.4rem; margin-top: 2.2rem; }
+  h2 { margin: 0 0 .8rem; font-size: 1.05rem; font-weight: 600; letter-spacing: .01em; }
+
+  /* a publication row: thumbnail left, description right */
+  .work { display: flex; gap: 1.2rem; margin-bottom: 1.6rem; align-items: flex-start; }
+  .work:last-child { margin-bottom: 0; }
+  .thumb {
+    flex: none; width: 128px; height: 84px;
+    object-fit: cover; border: 1px solid var(--rule); background: #efefec;
+  }
+  .work h3 { margin: 0 0 .2rem; font-size: 1rem; font-weight: 600; }
+  .work .meta  { margin: 0 0 .35rem; color: var(--muted); font-size: .9rem; }
+  .work .links { font-size: .9rem; }
+  .work p { margin: .35rem 0 0; font-size: .95rem; }
+
+  /* ---- footer ---------------------------------------------------- */
+  footer { margin-top: 3rem; color: var(--muted); font-size: .85rem; }
+
+  /* ---- narrow screens: stack the side-by-side rows --------------- */
+  @media (max-width: 30rem) {
+    header, .work { flex-direction: column; }
+    .portrait { width: 120px; height: 120px; }
+    .thumb { width: 100%; height: auto; aspect-ratio: 3 / 2; }
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <img class="portrait" src="photo.jpg" alt="Photograph of Nisan Stiennon">
+  <div>
+    <h1>Nisan Stiennon</h1>
+    <!-- <p class="affil"></p> -->
+    <p class="contact">
+      <a href="mailto:nisan+web@stiennon.com">Email</a> ·
+      <a href="https://scholar.google.com/citations?user=Fa2NOmAAAAAJ">Scholar</a>
+    </p>
+  </div>
+</header>
+
+<section>
+  <h2>Research interests</h2>
+  <p>
+    I work on agent foundations, the mathematical theory of knowing
+    and choosing. The goal is a good future where artificial
+    intelligences are aligned and cooperative with humans. My current
+    work is in open-source game theory, applying tools from topology
+    and domain theory.
+  </p>
+  <p>
+    Previously I helped work on alignment of large language models at
+    OpenAI. Before that I did a PhD in algebraic topology.
+  </p>
+</section>
+
+<section>
+  <h2>Selected work</h2>
+
+  <article class="work">
+    <img class="thumb" src="thumb-1.png" alt="" style="height: 72px">
+    <div>
+      <h3><a href="https://arxiv.org/abs/2009.01325">Learning to summarize from human feedback</a></h3>
+      <p class="meta">Nisan Stiennon, Long Ouyang, Jeff Wu, Daniel M. Ziegler, Ryan Lowe, Chelsea Voss, Alec Radford, Dario Amodei, Paul Christiano · <em>NeurIPS</em>, 2020</p>
+      <p class="links">
+        <a href="https://arxiv.org/abs/2009.01325">arXiv</a> ·
+        <a href="https://proceedings.neurips.cc/paper_files/paper/2020/file/1f89885d556929e98d3ef9b86448f951-Paper.pdf">PDF</a> ·
+        <a href="https://openaipublic.blob.core.windows.net/summarize-from-feedback/website/index.html#/">Website</a>
+      </p>
+      <p>
+	"Step 0" of scalable oversight is applying RLHF to
+	LLMs. See <a href="https://www.lesswrong.com/posts/vwu4kegAEZTBtpT6p/thoughts-on-the-impact-of-rlhf-research?commentId=HHBFYow2gCB3qjk2i#HHBFYow2gCB3qjk2i">here</a>
+	for a discussion of whether this project was good or bad for
+	the world.
+      </p>
+    </div>
+  </article>
+
+</section>
+
+<footer>
+  <p>Last updated June 2026.</p>
+</footer>
+
+</body>
+</html>
